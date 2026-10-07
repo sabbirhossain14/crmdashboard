@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env
+.DS_Store
+coverage/
+.npm-cache/
+work/
+*.tgz
+*.tsbuildinfo
+client/vite.config.d.ts

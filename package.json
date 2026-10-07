@@ -1,0 +1,9 @@
+{
+  "name": "clientflow-crm",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": ["client", "server"],
+  "scripts": {"dev": "concurrently -n api,web -c blue,green \"npm:dev:server\" \"npm:dev:client\"", "dev:server": "npm --workspace server run dev", "dev:client": "npm --workspace client run dev", "build": "npm --workspace server run build && npm --workspace client run build", "typecheck": "npm --workspace server run typecheck && npm --workspace client run typecheck", "lint": "npm --workspace server run lint && npm --workspace client run lint", "seed": "npm --workspace server run seed"},
+  "devDependencies": {"concurrently":"^9.1.2"}
+}

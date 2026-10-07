@@ -1,0 +1,2 @@
+import nodemailer from 'nodemailer';
+export async function sendEmail(to:string,subject:string,html:string){if(!process.env.SMTP_HOST)return;const tx=nodemailer.createTransport({host:process.env.SMTP_HOST,port:Number(process.env.SMTP_PORT||587),secure:Number(process.env.SMTP_PORT)===465,auth:process.env.SMTP_USER?{user:process.env.SMTP_USER,pass:process.env.SMTP_PASSWORD}:undefined});await tx.sendMail({from:process.env.SMTP_USER,to,subject,html});}
